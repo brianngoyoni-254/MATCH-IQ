@@ -60,7 +60,7 @@ showQuestion();
 
 
 // GET REQUEST (HTTP GET)
-// We use fetch() to GET external quiz questions from API
+// used fetch() to GET external quiz questions from API
 // This demonstrates asynchronous data fetching (AJAX concept)
 
 async function fetchExtraQuestions() {
@@ -230,7 +230,7 @@ btn.style.color = "white";
 }
 });
 }
-
+//move to the next question after delay
 streakEl.innerText = streak;
 
 setTimeout(() => {
@@ -271,11 +271,12 @@ function showResult() {
 
 clearInterval(timer);
 
+//hide quiz
 questionEl.style.display = "none";
 answersEl.style.display = "none";
-
+// show results section
 resultEl.classList.remove("hidden");
-
+// this is just inserting, results html
 resultEl.innerHTML = `
 <h2 class="result-title">Results</h2>
 <p>Your Score: ${score} / ${questions.length}</p>
