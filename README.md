@@ -99,7 +99,7 @@ The dashboard displays:
 | ---------------- | ----------------------- |
 | HTML5            | Structure               |
 | CSS3             | Styling and UI design   |
-| JavaScript (ES6) | Application logic       |
+| JavaScript      git | Application logic       |
 | LocalStorage API | Persistent data storage |
 | Fetch API        | External data retrieval |
 
