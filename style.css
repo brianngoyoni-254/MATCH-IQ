@@ -1,0 +1,278 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "Poppins", sans-serif;
+}
+
+body {
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+background: linear-gradient(135deg, #0f9b0f, #56ab2f);
+padding: 20px;
+}
+
+/*MAIN CONTAINER*/
+.container {
+width: 100%;
+max-width: 520px;
+background: #ffffff;
+border-radius: 20px;
+padding: 22px;
+box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+animation: fadeIn 0.4s ease-in-out;
+}
+
+/*WELCOME MESSAGE  */
+.welcome {
+text-align: center;
+padding: 20px 18px;
+margin-bottom: 18px;
+
+background: linear-gradient(135deg, #1b5e20, #43a047, #66bb6a);
+color: #ffffff;
+
+border-radius: 18px;
+
+box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+
+position: relative;
+overflow: hidden;
+}
+
+/* glow effect */
+.welcome::before {
+content: "";
+position: absolute;
+top: -50%;
+left: -50%;
+width: 200%;
+height: 200%;
+background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 60%);
+transform: rotate(25deg);
+}
+
+.welcome h1 {
+font-size: 20px;
+font-weight: 700;
+margin-bottom: 6px;
+letter-spacing: 0.5px;
+position: relative;
+}
+
+.welcome p {
+font-size: 13px;
+opacity: 0.95;
+line-height: 1.4;
+position: relative;
+font-weight: bolder;
+}
+
+/*DASHBOARD */
+.dashboard {
+background: #f7f7f7;
+padding: 15px;
+border-radius: 15px;
+margin-bottom: 15px;
+box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+.dash-row {
+display: flex;
+justify-content: space-between;
+padding: 8px 0;
+font-size: 14px;
+font-weight: 500;
+border-bottom: 1px solid #eaeaea;
+}
+
+.dash-row:last-child {
+border-bottom: none;
+}
+
+.dashboard h4 {
+margin-top: 12px;
+font-size: 13px;
+color: #555;
+}
+
+/* Previous scores */
+#score-list {
+list-style: none;
+margin-top: 8px;
+max-height: 90px;
+overflow-y: auto;
+padding-right: 5px;
+}
+
+#score-list li {
+background: white;
+padding: 6px 10px;
+margin-bottom: 5px;
+border-radius: 8px;
+font-size: 12px;
+box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* Reset button */
+.dashboard button {
+margin-top: 10px;
+width: 100%;
+padding: 10px;
+border: none;
+border-radius: 10px;
+background: #2e7d32;
+color: white;
+font-weight: bold;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.dashboard button:hover {
+background: #1b5e20;
+transform: scale(1.02);
+}
+
+/* TOP BAR */
+.top-bar {
+display: flex;
+justify-content: space-between;
+margin-bottom: 12px;
+}
+
+.pill {
+background: linear-gradient(135deg, #2e7d32, #43a047);
+color: white;
+padding: 8px 14px;
+border-radius: 25px;
+font-size: 13px;
+font-weight: 500;
+box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+}
+
+/* PROGRESS BAR */
+.progress {
+width: 100%;
+height: 8px;
+background: #eaeaea;
+border-radius: 10px;
+overflow: hidden;
+margin: 12px 0 18px;
+}
+
+#progress-bar {
+height: 100%;
+width: 0%;
+background: linear-gradient(90deg, #11998e, #38ef7d);
+transition: width 0.3s ease;
+}
+
+/* QUESTION AREA */
+h2 {
+font-size: 14px;
+color: #666;
+margin-bottom: 6px;
+}
+
+h3 {
+font-size: 18px;
+color: #222;
+margin-bottom: 15px;
+}
+
+/* ANSWERS */
+#answers button {
+width: 100%;
+padding: 12px;
+margin-bottom: 8px;
+border: none;
+border-radius: 12px;
+background: #f2f2f2;
+font-size: 14px;
+cursor: pointer;
+transition: 0.25s;
+}
+
+#answers button:hover {
+background: #2e7d32;
+color: white;
+transform: translateY(-2px);
+}
+
+/* RESULT BOX */
+#result {
+margin-top: 15px;
+padding: 18px;
+border-radius: 15px;
+background: linear-gradient(135deg, #2e7d32, #43a047);
+color: white;
+text-align: center;
+box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.hidden {
+display: none;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+from {
+opacity: 0;
+transform: translateY(10px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 480px) {
+.container {
+padding: 15px;
+}
+
+h3 {
+font-size: 16px;
+}
+
+.pill {
+font-size: 12px;
+padding: 6px 10px;
+}
+}
+
+
+.welcome p {
+font-size: 14px;
+opacity: 1;
+font-weight: 700;
+}
+
+/* Results title */
+.result-title {
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 8px;
+}
+
+/* Restart button */
+.restart-btn {
+margin-top: 10px;
+padding: 10px;
+width: 100%;
+border: none;
+border-radius: 8px;
+background: #ffffff;
+color: #2e7d32;
+font-weight: bold;
+cursor: pointer;
+}
+
+.restart-btn:hover {
+background: #1b5e20;
+color: white;
+}
+
