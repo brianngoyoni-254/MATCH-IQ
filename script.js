@@ -29,7 +29,7 @@ let questions = [
 
 { question: "In game theory, what is a Nash equilibrium in penalties?", correct: "Optimal mixed strategy", options: ["Random kick","Optimal mixed strategy","Always same side","Goalkeeper guessing"] },
 
-{ question: "Which formation best describes a 4-3-3 shape?", correct: "4 defenders, 3 midfielders, 3 forwards", options: ["3-4-3","4-3-3","4-4-2","5-3-2"] },
+{ question: "Which formation best describes a 4-3-3 shape?", correct: "4, 3, 3", options: ["3-4-3","4-3-3","4-4-2","5-3-2"] },
 
 { question: "Kenyan Premier League: Which club is based in Kisumu?", correct: "Kisumu All Stars", options: ["Tusker FC","Kisumu All Stars","Ulinzi Stars","Bandari FC"] },
 
@@ -83,7 +83,7 @@ options: [...q.incorrect_answers, q.correct_answer]
 questions = [...questions, ...apiQuestions];
 
 showQuestion();
-// error  handling 
+// error  handling ...liske basically prevents app from crashing if Api fails
 } catch (err) {
 console.error("API fetch failed", err);
 showResult();
