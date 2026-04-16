@@ -70,7 +70,7 @@ apiLoaded = true;
 
 // GET REQUEST TO PUBLIC API (Open Trivia DB)
 const res = await fetch("https://opentdb.com/api.php?amount=10&category=21&type=multiple");
-const data = await res.json();// convert data to usable js data
+const data = await res.json();
 
 // convert API response into usable format
 const apiQuestions = data.results.map(q => ({
@@ -83,7 +83,7 @@ options: [...q.incorrect_answers, q.correct_answer]
 questions = [...questions, ...apiQuestions];
 
 showQuestion();
-// error  handling ...liske basically prevents app from crashing if Api fails
+// error  handling ...like basically prevents app from crashing if Api fails
 } catch (err) {
 console.error("API fetch failed", err);
 showResult();
@@ -271,12 +271,12 @@ function showResult() {
 
 clearInterval(timer);
 
-//hide quiz
+
 questionEl.style.display = "none";
 answersEl.style.display = "none";
-// show results section
+
 resultEl.classList.remove("hidden");
-// this is just inserting, results html
+
 resultEl.innerHTML = `
 <h2 class="result-title">Results</h2>
 <p>Your Score: ${score} / ${questions.length}</p>
@@ -288,6 +288,6 @@ saveScore(score);
 }
 
 
-// INIT APP (START)
+
 
 loadStats();
